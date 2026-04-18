@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IT Management Service</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <main class="app-shell">
+            <section id="loginView" class="card login-card">
+                <h1>IT Management Service</h1>
+                <p class="muted">Track team responsibilities, tasks, tickets, and company devices.</p>
+                <form id="loginForm" class="form-grid">
+                    <label>
+                        Username
+                        <input id="username" type="text" placeholder="admin" required />
+                    </label>
+                    <label>
+                        Password
+                        <input id="password" type="password" placeholder="password123" required />
+                    </label>
+                    <button type="submit">Log In</button>
+                    <p id="loginError" class="error"></p>
+                </form>
+            </section>
+
+            <section id="dashboardView" class="hidden">
+                <header class="topbar card">
+                    <div>
+                        <h2>Welcome, <span id="activeUser"></span></h2>
+                        <p class="muted">Manage responsibilities, tasking, help desk tickets, and assets in one place.</p>
+                    </div>
+                    <button id="logoutBtn" class="secondary">Log Out</button>
+                </header>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>Team Members</h3>
+                        <form id="memberForm" class="form-grid compact">
+                            <input name="name" placeholder="Full name" required />
+                            <input name="role" placeholder="Role" required />
+                            <input name="email" type="email" placeholder="Email" required />
+                            <button type="submit">Add Team Member</button>
+                        </form>
+                        <ul id="memberList" class="list"></ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>User Duties & Responsibilities</h3>
+                        <form id="dutyForm" class="form-grid compact">
+                            <input name="owner" placeholder="Team member" required />
+                            <input name="duty" placeholder="Duty / responsibility" required />
+                            <select name="priority" required>
+                                <option value="">Priority</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                            <button type="submit">Assign Duty</button>
+                        </form>
+                        <ul id="dutyList" class="list"></ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Tasking</h3>
+                        <form id="taskForm" class="form-grid compact">
+                            <input name="title" placeholder="Task title" required />
+                            <input name="assignee" placeholder="Assigned to" required />
+                            <input name="dueDate" type="date" required />
+                            <button type="submit">Create Task</button>
+                        </form>
+                        <ul id="taskList" class="list"></ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Help Desk Tickets</h3>
+                        <form id="ticketForm" class="form-grid compact">
+                            <input name="issue" placeholder="Issue summary" required />
+                            <input name="requestor" placeholder="Requestor" required />
+                            <select name="status" required>
+                                <option>Open</option>
+                                <option>In Progress</option>
+                                <option>Resolved</option>
+                            </select>
+                            <button type="submit">Log Ticket</button>
+                        </form>
+                        <ul id="ticketList" class="list"></ul>
+                    </article>
+
+                    <article class="card full-width">
+                        <h3>Computer Inventory (IP / MAC / Hostname)</h3>
+                        <form id="assetForm" class="form-grid compact inventory-form">
+                            <input name="owner" placeholder="Assigned user" required />
+                            <input name="hostname" placeholder="Hostname" required />
+                            <input name="ip" placeholder="IP address" required />
+                            <input name="mac" placeholder="MAC address" required />
+                            <button type="submit">Register Computer</button>
+                        </form>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Owner</th>
+                                        <th>Hostname</th>
+                                        <th>IP</th>
+                                        <th>MAC</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="assetTableBody"></tbody>
+                            </table>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
+</html>

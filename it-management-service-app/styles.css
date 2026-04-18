@@ -1,0 +1,147 @@
+:root {
+    color-scheme: light;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #132033;
+    --muted: #55657b;
+    --primary: #1f6feb;
+    --secondary: #d0d9e8;
+    --danger: #b42318;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+}
+
+.app-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+    padding: 1rem;
+}
+
+.login-card {
+    max-width: 420px;
+    margin: 8vh auto;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-grid {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.form-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-bottom: 0.75rem;
+}
+
+.inventory-form {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+label {
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+    border-radius: 8px;
+    border: 1px solid #c8d3e5;
+    font-size: 0.94rem;
+    padding: 0.55rem 0.7rem;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+button:hover {
+    opacity: 0.94;
+}
+
+.muted {
+    color: var(--muted);
+    margin-top: 0;
+}
+
+.error {
+    min-height: 1.1em;
+    color: var(--danger);
+    margin: 0;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.list li {
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+    border: 1px solid #e4e9f2;
+    background: #fafcff;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    border-bottom: 1px solid #e4e9f2;
+    padding: 0.55rem;
+}
+
+.hidden {
+    display: none;
+}
